@@ -1,4 +1,4 @@
-fetch('http://localhost:3000/api/destinations')
+fetch('http://assign2wendy-heroku-atlas.herokuapp.com/api/destinations')
   .then(function(response){
     return response.json();
   })
