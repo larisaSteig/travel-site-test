@@ -1,4 +1,4 @@
-fetch('http://assign2wendy-heroku-atlas.herokuapp.com/api/destinations')
+fetch('https://assign2wendy-heroku-atlas.herokuapp.com/api/destinations')
   .then(function(response){
     return response.json();
   })
