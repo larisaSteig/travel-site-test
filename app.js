@@ -47,15 +47,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Define an endpoint handler for the home page 
 app.get('/', function(request, response){
   response.render('index',{});
-})
+});
 
 app.get('/login', function(request, response){
   response.render('login',{});
-})
+});
 
   app.get('/register', function(request, response){
     response.render('register',{});
-  })
+  });
 
 // Define an endpoint handler for the individual ejs pages
 // app.get('/:id', function(request, response){
@@ -84,7 +84,7 @@ app.get('/api/destinations', function(request, response){
     response.json(result);
   });
 
-})
+});
 
 // if no file or endpoint found, send a 404 error as a response to the browser
 app.use(function(req, res, next) {

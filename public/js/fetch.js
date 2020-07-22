@@ -2,9 +2,10 @@ fetch('https://assign2wendy-heroku-atlas.herokuapp.com/api/destinations')
   .then(function(response){
     return response.json();
   })
-  .then(function(destinations){
-
-  const imgList = destinations;
+  // .then(function(destinations){
+  .then(function(data){
+  // const imgList = destinations;
+  const imgList = data;
 let imgTemplate = ''; 
 
 
