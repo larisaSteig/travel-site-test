@@ -33,11 +33,11 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // cors origin URL - Allow inbound traffic from origin
-corsOptions = {
-  origin: "https://assign2wendy-heroku-atlas.herokuapp.com/",
-  //   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-   };
-  app.use(cors(corsOptions));
+// corsOptions = {
+//   origin: "https://assign2wendy-heroku-atlas.herokuapp.com/",
+//   //   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+//    };
+//   app.use(cors(corsOptions));
   
 
 // automatically check if requested file is found in /public
