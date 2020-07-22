@@ -34,7 +34,7 @@ app.set('view engine', 'ejs');
 
 // cors origin URL - Allow inbound traffic from origin
 corsOptions = {
-  origin: "https://assign2wendy-heroku-atlas.herokuapp.com/",
+  origin: "https://dashboard.heroku.com",
   //   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
    };
   app.use(cors(corsOptions));
@@ -46,15 +46,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Define an endpoint handler for the home page 
 app.get('/', function(request, response){
-  response.render('index',{});
+  response.render('index',{})
 });
 
 app.get('/login', function(request, response){
-  response.render('login',{});
+  response.render('login',{})
 });
 
   app.get('/register', function(request, response){
-    response.render('register',{});
+    response.render('register',{})
   });
 
 // Define an endpoint handler for the individual ejs pages
