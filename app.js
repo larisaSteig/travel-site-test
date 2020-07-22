@@ -33,11 +33,11 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // cors origin URL - Allow inbound traffic from origin
-// corsOptions = {
-//   origin: "https://assign2wendy-heroku-atlas.herokuapp.com/",
-//   //   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-//    };
-//   app.use(cors(corsOptions));
+corsOptions = {
+  origin: "https://assign2wendy-heroku-atlas.herokuapp.com/",
+  //   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+   };
+  app.use(cors(corsOptions));
   
 
 // automatically check if requested file is found in /public
@@ -51,26 +51,26 @@ app.get('/', function(request, response){
 
 app.get('/login', function(request, response){
   response.render('login',{});
+})
 
   app.get('/register', function(request, response){
     response.render('register',{});
   })
-})
 
 // Define an endpoint handler for the individual ejs pages
 // app.get('/:id', function(request, response){
 
-//   // model.findOne returns the first object it finds
-//   // model.find will always return an array, even if it only finds one 
-//   Destination.findOne({'id': request.params.id}, function(error, destination) {
+  // model.findOne returns the first object it finds
+  // model.find will always return an array, even if it only finds one 
+  // Destination.findOne({'id': request.params.id}, function(error, destination) {
   
-//     // Check for IDs that are not in our list
-//     if (!destination) {
-//       return response.send('Invalid ID.');
-//     }
+    // Check for IDs that are not in our list
+    // if (!destination) {
+    //   return response.send('Invalid ID.');
+    // }
 
-//     // Compile view and respond
-//     response.render('register',destination);
+    // Compile view and respond
+    response.render('register',destination);
 //   });
 // })
 
@@ -80,8 +80,8 @@ app.get('/api/destinations', function(request, response){
 
   // response.json(animals);
 
-  Destination.find(function(error, animals) { 
-    response.json(destinations);
+  Destination.find(function(error, result) { 
+    response.json(result);
   });
 
 })
