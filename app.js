@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
 // Models
-const Desti = require('./models/desti.js');
+const Desti = require('./models/destinations.js');
 // Import seed data
 const dbSeed = require('./seeds/destinations.js');
 
@@ -79,8 +79,8 @@ app.get('/api/destinations', function(request, response){
 
    response.json(destinations);
 
-  Destination.find(function(error, result) { 
-    response.json(result);
+  Destinations.find(function(error, destinations) { 
+    response.json(destinations);
   });
 
 });
