@@ -4,12 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
-
-
-
-
 // Models
-const Destination = require('./models/destination.js');
+const Desti = require('./models/desti.js');
 // Import seed data
 const dbSeed = require('./seeds/destinations.js');
 
