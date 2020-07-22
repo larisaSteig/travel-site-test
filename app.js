@@ -10,6 +10,8 @@ const cors = require('cors');
 
 // Models
 const Destination = require('./models/destination.js');
+// Import seed data
+const dbSeed = require('./seeds/destinations.js');
 
 // Hide creds from repo
 const mongoDB = process.env.MONGODB_URL;
@@ -33,11 +35,11 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // cors origin URL - Allow inbound traffic from origin
-corsOptions = {
-  origin: "https://dashboard.heroku.com",
-  //   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-   };
-  app.use(cors(corsOptions));
+// corsOptions = {
+//   origin: "https://dashboard.heroku.com",
+//   //   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+//    };
+//   app.use(cors(corsOptions));
   
 
 // automatically check if requested file is found in /public
