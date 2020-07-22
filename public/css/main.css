@@ -51,12 +51,6 @@
 
 
 
-/*****login.html body*****/
-/************************/
-.login-signup-body{
-    background-color: rgb(173, 166, 166);
-    min-height: 100vh;
-}
 
 /*****All html Header*****/
 /************************/
@@ -69,8 +63,8 @@
     color: #fff;
 
     padding-left: 0px; 
-    
-    margin: auto;
+    /* sticky foot need cross off the margin */
+    /* margin: auto; */
     }
 
 
@@ -191,21 +185,33 @@ section a:hover {
     height: 450px;
     overflow: hidden;
 }
+ #gallery{
+   margin-bottom: 0;
 
+ }
 .array-gallery{
     display: flex;
     flex-wrap:wrap;
+    overflow: hidden;
+  
     min-width: 30vh;
     justify-content: center;
     
 /* background-color: rgb(47, 85, 35); */
-    margin-bottom: 10px;
-    padding-bottom: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
     }
 .array-gallery img {
-        margin: 0.1em;
-        border-radius: 20%;
+        margin: 0.4em;
+        height:15vh;
+        min-width:13vw;
+
+        border: 1px solid rgb(49, 165, 49);
+        border-radius: 4px;
+        padding: 2px;
+   
     }
+ 
 
 
 
@@ -236,8 +242,8 @@ section a:hover {
 
 .fieldset-index-page input[type=text], textarea{
     width: 100%;
-    padding: em;
-
+    padding: 0;
+    
     border-radius: 4px;
     box-sizing: border-box;
     
@@ -264,6 +270,18 @@ section a:hover {
   .fieldset-index-page ul {
     margin-top: 0px;
   }
+
+
+/*****login.html body*****/
+/************************/
+.login-signup-body{
+  background-color: rgb(173, 166, 166);
+  min-height: 100vh;
+  /* sticky foot */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 
 /***login.html  form***/
