@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
 // Models
-const Destinations = require('./models/destinations.js');
+const Gallery = require('./models/destinations.js');
 // Import seed data
 // const dbSeed = require('./seeds/destinations.js');
 
@@ -60,7 +60,7 @@ app.get('/register', function(request, response){
 
   // model.findOne returns the first object it finds
   // model.find will always return an array, even if it only finds one 
-   Destinations.findOne({'id': request.params.id}, function(error, item) {
+   Gallery.findOne({'id': request.params.id}, function(error, item) {
   
     // Check for IDs that are not in our list
      if (!item) {
@@ -76,9 +76,9 @@ app.get('/register', function(request, response){
 
 // Create a JSON (no EJS here) that returns the entire animal JSON
 // This is the endpoint that the frontend gallery script calls (see: ./public/js/app.js).
-app.get('/api/destinations', function(request, response){
+app.get('/api/destination', function(request, response){
 
-    Destinations.find(function(error, item) { 
+    Gallery.find(function(error, item) { 
     response.json(item);
   });
 
