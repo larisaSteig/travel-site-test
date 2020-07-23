@@ -2,7 +2,7 @@
 // https://css-tricks.com/using-fetch/
 
 // fetch('https://assign2wendy-heroku-atlas.herokuapp.com/api/destinations')
-fetch('https://texttravel.herokuapp.com/api/destinations')
+fetch('https://texttravel.herokuapp.com/api/destination')
 .then(function (response) {
   return response.json()
 })
