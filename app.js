@@ -61,15 +61,15 @@ app.get('/login', function(request, response){
 
   // model.findOne returns the first object it finds
   // model.find will always return an array, even if it only finds one 
-   Destinations.findOne({'id': request.params.id}, function(error, destination) {
+   Destinations.findOne({'id': request.params.id}, function(error, item) {
   
     // Check for IDs that are not in our list
-     if (!destination) {
+     if (!item) {
       response.render('Invalid ID.');
     }
 
     // Compile view and respond
-    response.render('desti',destination);
+    response.render('desti',item);
   });
 
 })
