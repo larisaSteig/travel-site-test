@@ -43,18 +43,17 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Define an endpoint handler for the home page 
-// app.get('/', function(request, response){
-//   response.render('index',{})
-// });
+app.get('/', function(request, response){
+  response.render('index',{});
+})
 
-// Define an endpoint handler for the individual ejs pages
 app.get('/login', function(request, response){
-  response.render('login',{})
-});
+  response.render('login',{});
+})
 
-  app.get('/register', function(request, response){
-    response.render('register',{})
-  });
+app.get('/register', function(request, response){
+  response.render('register',{});
+})
 
 // // Define an endpoint handler for the individual ejs pages
 //   app.get('/:id', function(request, response){
