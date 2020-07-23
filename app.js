@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
 // Models
-const Gallery = require('./models/destinations.js');
+const Destinations = require('./models/destinations.js');
 // Import seed data
 // const dbSeed = require('./seeds/destinations.js');
 
@@ -43,9 +43,9 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Define an endpoint handler for the home page 
-app.get('/', function(request, response){
-  response.render('index',{})
-});
+// app.get('/', function(request, response){
+//   response.render('index',{})
+// });
 
 // Define an endpoint handler for the individual ejs pages
 app.get('/login', function(request, response){
@@ -56,30 +56,30 @@ app.get('/login', function(request, response){
     response.render('register',{})
   });
 
-// Define an endpoint handler for the individual ejs pages
-  app.get('/:id', function(request, response){
+// // Define an endpoint handler for the individual ejs pages
+//   app.get('/:id', function(request, response){
 
-  // model.findOne returns the first object it finds
-  // model.find will always return an array, even if it only finds one 
-   Gallery.findOne({'id': request.params.id}, function(error, item) {
+//   // model.findOne returns the first object it finds
+//   // model.find will always return an array, even if it only finds one 
+//    Destinations.findOne({'id': request.params.id}, function(error, item) {
   
-    // Check for IDs that are not in our list
-     if (!item) {
-      response.render('Invalid ID.');
-    }
+//     // Check for IDs that are not in our list
+//      if (!item) {
+//       response.render('Invalid ID.');
+//     }
 
-    // Compile view and respond
-    response.render('desti',item);
-  });
+//     // Compile view and respond
+//     response.render('desti',item);
+//   });
 
-})
+// })
  
 
 // Create a JSON (no EJS here) that returns the entire animal JSON
 // This is the endpoint that the frontend gallery script calls (see: ./public/js/app.js).
-app.get('/api/destination', function(request, response){
+app.get('/api/destinations', function(request, response){
 
-    Gallery.find(function(error, item) { 
+    Destinations.find(function(error, item) { 
     response.json(item);
   });
 
