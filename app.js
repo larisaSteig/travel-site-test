@@ -5,9 +5,9 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
 // Models
-const Desti = require('./models/destinations.js');
+const Destinations = require('./models/destinations.js');
 // Import seed data
-const dbSeed = require('./seeds/destinations.js');
+// const dbSeed = require('./seeds/destinations.js');
 
 // Hide creds from repo
 const mongoDB = process.env.MONGODB_URL;
@@ -57,30 +57,30 @@ app.get('/login', function(request, response){
   });
 
 // Define an endpoint handler for the individual ejs pages
-  // app.get('/:id', function(request, response){
+  app.get('/:id', function(request, response){
 
   // model.findOne returns the first object it finds
   // model.find will always return an array, even if it only finds one 
-  //  Destination.findOne({'id': request.params.id}, function(error, destination) {
+   Destinations.findOne({'id': request.params.id}, function(error, destination) {
   
     // Check for IDs that are not in our list
-    //  if (!destination) {
-    //   return response.send('Invalid ID.');
-    // }
+     if (!destination) {
+      response.render('Invalid ID.');
+    }
 
     // Compile view and respond
-  //   response.render('register',destination);
-  // });
+    response.render('desti',destination);
+  });
+
+})
  
 
 // Create a JSON (no EJS here) that returns the entire animal JSON
 // This is the endpoint that the frontend gallery script calls (see: ./public/js/app.js).
 app.get('/api/destinations', function(request, response){
 
-   response.json(destinations);
-
-  Destinations.find(function(error, destinations) { 
-    response.json(destinations);
+    Destinations.find(function(error, item) { 
+    response.json(item);
   });
 
 });
@@ -96,4 +96,4 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, function(){
   console.log(`Listening on port ${PORT}`);
-});
+})

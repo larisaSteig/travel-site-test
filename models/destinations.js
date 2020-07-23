@@ -6,12 +6,11 @@ const mongoose = require('mongoose');
 "Everything in Mongoose starts with a Schema. Each schema maps to a MongoDB collection and defines the shape of the documents within that collection."
 */
 const gallerySchema = new mongoose.Schema(
-  {
-    id:           Number,
+  { id:           Number,
     title:        String,
-    fileName:     String,
+    filename:     String,
     url:          String
-  }
+}
 );
 
 // Compile and export our model using the above Schema.
